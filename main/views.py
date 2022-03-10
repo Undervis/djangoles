@@ -3,6 +3,5 @@ from .models import Item
 
 
 def home(request):
-    items = Item.objects.all()[1:5]
-    print(items.query)
+    items = Item.objects.all()
     return render(request, 'home.html', {'items': items})
