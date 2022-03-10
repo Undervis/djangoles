@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block title %}Главная страница{% endblock %}
+
+{% block content %}
+    <h1>Элементы в базе</h1>
+    <br>
+    {% if items %}
+        <div class="row row-col-auto">
+        {% for i in items %}
+            <div class="col">
+                <div class="card mt-2" style="max-width: 30rem">
+                    <img class="card-img-top" src="{{ i.img.url }}"/>
+                    <div class="card-body">
+                        <h1 class="fs-5">{{ i.name }}</h1>
+                        <span class="fs-6">{{ i.description }}</span>
+                    </div>
+                    <div class="card-footer">
+                        <span class="fs-6">Цена: {{ i.price }} руб</span>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+        </div>
+    {% endif %}
+{% endblock %}
