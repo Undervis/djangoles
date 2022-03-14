@@ -11,9 +11,17 @@ class Item(models.Model):
     def __str__(self):
         return self.name
 
+    class Meta:
+        verbose_name = 'запись'
+        verbose_name_plural = 'Записи'
+
 
 class Category(models.Model):
     name = models.CharField('Название', max_length=32)
 
     def __str__(self):
         return self.name
+
+    class Meta:
+        verbose_name = 'категория'
+        verbose_name_plural = 'Категории'
